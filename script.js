@@ -1,7 +1,13 @@
+ //TODO: put codes in different functions
+ //TODO: compare cities
+ //TODO: see searching record
+ //TODO: input value error
+ //TODO: CSS, responsive
+ 
  document.querySelector("#submit").addEventListener("click", async function(e){
 
         e.preventDefault();
-
+    });
             const key = "da9a51208d5e4403a9053883caf4d08d";
             let city = document.querySelector("input").value;
 
@@ -9,19 +15,13 @@
             const data = await response.json();
             console.log(data);
 
-            // //get current weather discription
+            //get current weather discription
             var sun = data.data[0].weather.description;
-            console.log(sun);
            
-
             //get temperatures
             var temperature = data.data[0].temp;
             var highestTemp = data.data[0].max_temp; 
             var lowestTemp = data.data[0].min_temp; 
-
-            console.log("current temp: " + temperature + "°C ");
-            console.log("highest temp: " + highestTemp + "°C ");
-            console.log("lowest temp: " + lowestTemp + "°C ");
 
             //forcast
             var forcast1 = data.data[1].temp;
@@ -32,7 +32,7 @@
 
             console.log("5 days forcast: "+ forcast1 + "°C " + forcast2 + "°C " + forcast3 + "°C " +  forcast4 + "°C " +  forcast5 + "°C" );
 
-
+            //display function
             function display(){
                 document.querySelector(".sun").innerHTML = `Now is ${sun}`;
                 document.querySelector(".current-temp").innerHTML = "current: " + temperature + "°C ";
@@ -98,7 +98,7 @@
         
   
         
-});
+
 
 
 
