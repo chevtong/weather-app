@@ -17,6 +17,8 @@ body{
 p{
     margin: 0;
     padding: 0;
+    font-family: 'Varela Round', sans-serif;
+
 }
 
 p.current-temp{
@@ -64,9 +66,12 @@ button:hover{
     width: 500px;
     height: 700px;
     padding: 30px 50px;
-
     border: 1px solid grey;
 
+}
+
+.container>div{
+    margin: 30px;
 }
 
 .temperature{

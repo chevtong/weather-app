@@ -2,12 +2,13 @@
  //TODO: compare cities
  //TODO: see searching record
  //TODO: input value error
- //TODO: CSS, responsive
+ //TODO: CSS for chart
+ //TODO: show image accordingly
  
  document.querySelector("#submit").addEventListener("click", async function(e){
 
         e.preventDefault();
-    });
+   
             const key = "da9a51208d5e4403a9053883caf4d08d";
             let city = document.querySelector("input").value;
 
@@ -34,9 +35,12 @@
 
             //display function
             function display(){
-                document.querySelector(".sun").innerHTML = `Now is ${sun}`;
-                document.querySelector(".current-temp").innerHTML = "current: " + temperature + "°C ";
-                document.querySelector(".temp-range").innerHTML = `Highest ${highestTemp}°C  / ${lowestTemp}°C  Lowest`;
+                document.querySelector(".city").innerHTML = data.city_name;
+                document.querySelector(".sun").innerHTML = sun;
+                document.querySelector(".current-temp").innerHTML = temperature + "°C ";
+                document.querySelector(".temp-highest").innerHTML += " "+ highestTemp + "°C ";
+                document.querySelector(".temp-lowest").innerHTML += " " + lowestTemp + "°C ";
+
 
             }
 
@@ -87,6 +91,8 @@
             };
         
             makeChart();
+
+});
 
         
 
