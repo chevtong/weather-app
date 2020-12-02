@@ -7,6 +7,7 @@
  
  document.querySelector("#submit").addEventListener("click", async function(e){
 
+        
         e.preventDefault();
    
             const key = "da9a51208d5e4403a9053883caf4d08d";
@@ -40,11 +41,12 @@
                 document.querySelector(".current-temp").innerHTML = temperature + "°C ";
                 document.querySelector(".temp-highest").innerHTML += " "+ highestTemp + "°C ";
                 document.querySelector(".temp-lowest").innerHTML += " " + lowestTemp + "°C ";
-
-
             }
 
             display();
+
+            if(sun.value)
+
 
             //date for chart
             var date1 = data.data[1].valid_date;
@@ -65,9 +67,9 @@
                     data: {
                         labels: [ date1 , date2, date3, date4, date5],
                         datasets: [{
-                            label: 'Next 5 Day',
+                            label: 'TEMPERATURE',
                             backgroundColor: 'transparent',
-                            borderColor: 'lightblue',
+                            borderColor: '#fba42c',
                             data: [forcast1, forcast2, forcast3, forcast4, forcast5]
                         }]
                     },
@@ -77,12 +79,21 @@
                     options: {
                         responsive:false,
                         scales: {
+                            xAxes: [{
+                                gridLines: {
+                                    drawOnChartArea: false
+                                }
+                            }],
+
+
                             yAxes: [{
+                                
                                 ticks: {
                                     // Include a dollar sign in the ticks
                                     callback: function(value, index, values) {
                                         return value + '°C';
-                                    }
+                                    },
+                                    stepSize: 5
                                 }
                             }]
                         }
