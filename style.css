@@ -4,6 +4,7 @@
     width: 800px;
     height: 500px;
     float: right;
+    display:none;
 }
 
 body{
@@ -56,6 +57,11 @@ p.temp-lowest{
 input{
     border: none;
     background-color:  #e8e8e8;
+    font-family: 'Varela Round', sans-serif;
+    width: 70%;
+    line-height: 2;
+    text-align: center;
+    
 }
 
 button{
