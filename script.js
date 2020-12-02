@@ -1,4 +1,3 @@
-
  //TODO: compare cities
  //TODO: see searching record
  
@@ -42,17 +41,24 @@ function display(data){
 
     //get temperatures
     var temperature = data.data[0].temp;
-    var highestTemp = data.data[0].max_temp; 
-    var lowestTemp = data.data[0].min_temp; 
+    var highestTemp = Math.round(data.data[0].max_temp); 
+    var lowestTemp = Math.round(data.data[0].min_temp); 
     //get current weather discription
     var description = data.data[0].weather.description;
-
+    //get weather details
+    var precipation = Math.round(data.data[0].precip);
+    var uv = Math.round(data.data[0].uv);
+    var humidity = data.data[0].rh;
+    var windSpeed =  Math.round(data.data[0].wind_spd);
+  
     //innerHTML wording display
     document.querySelector(".city").innerHTML = data.city_name;
     document.querySelector(".sun").innerHTML = description;
-    document.querySelector(".current-temp").innerHTML = temperature + "°C ";
-    document.querySelector(".temp-highest").innerHTML = `<i class="fas fa-caret-up"></i> ${highestTemp}°C`;
-    document.querySelector(".temp-lowest").innerHTML = `<i class="fas fa-caret-up"></i> ${lowestTemp}°C`;
+    document.querySelector(".current-temp").innerHTML = temperature + "°c ";
+    document.querySelector(".temp-highest").innerHTML = `<i class="fas fa-caret-up"></i> ${highestTemp}°c   
+                                                          <i class="fas fa-caret-down"></i> ${lowestTemp}°c`;
+    document.querySelector(".detail-num").innerHTML += `${uv} <br>  ${precipation}% <br>
+                                                      ${humidity}% <br> ${windSpeed}km/h`;
 
     //show related img according to weather discription 
     if(temperature < "3"){
@@ -69,6 +75,8 @@ function display(data){
     }  else {
         document.querySelector("img").src = "img/beach-sunset.png";
     }
+
+    
 }
 
 //chart function
@@ -98,7 +106,7 @@ function makeChart(data){
         data: {
             labels: [ date1 , date2, date3, date4, date5],
             datasets: [{
-                label: 'TEMPERATURE',
+                label: 'TEMPERATURE FOR 5 DAYS',
                 backgroundColor: 'transparent',
                 borderColor: '#fba42c',
                 data: [forcast1, forcast2, forcast3, forcast4, forcast5]

@@ -18,40 +18,56 @@ body{
 h4{
     font-size: 30px;
 }
-img{
-    width: 180px;
-}
+
 p{
     margin: 0;
     padding: 0;
-    font-family: 'Varela Round', sans-serif;
-
+    font-family: 'Varela Round', sans-serif;     
+    font-size: 12px;
 }
 
 p.current-temp{
     font-size: 50px;
-    grid-row: 1/3;
     justify-self: end;
+    grid-area: current-temp;
     
-}
-p.linebreak{
-    justify-self: center;
-    align-self: end;
-    grid-column: 2/4;
-}
-
-p.temp-highest, p.temp-lowest{
-    font-size: 12px;
 }
 
 p.temp-highest{
-    grid-row: 2/3;
-    grid-column: 2/3;
+
+    justify-self: end;
+    padding-right: 30px;
+    grid-area: highest-temp;
 }
 
-p.temp-lowest{
-    grid-row: 2/3;
-    grid-column: 3/4;
+p.detail-title{
+    font-size: 20px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    grid-area:title;
+    text-align: left;
+}
+
+p.detail{
+    font-size: 10px;
+
+    text-align: left;
+    grid-area: detail;
+
+}
+P.detail-num{
+   grid-area: num;
+   font-size: 10px;
+   text-align: left;
+}
+
+img{
+    width: 180px;
+}
+
+canvas{
+    width: 90%;
+    margin: auto;
 }
 
 input{
@@ -59,9 +75,13 @@ input{
     background-color:  #e8e8e8;
     font-family: 'Varela Round', sans-serif;
     width: 70%;
-    line-height: 2;
+    line-height: 2.5;
     text-align: center;
+    opacity: 0.5;
     
+}
+input:hover{
+    opacity: 1;
 }
 
 button{
@@ -73,6 +93,7 @@ button{
 button:hover{
     color: #ff8856;
 }
+
 
 .container{
     width: 500px;
@@ -88,13 +109,14 @@ button:hover{
 
 .temperature{
     display: grid; 
-    grid-template-columns: 50% 15% 15%;
-    grid-template-rows: 50% 50%;
+    grid-template-columns: 50% 15% 2%;
+    grid-template-rows: 40% 40% 20%;
     margin: auto;
-    grid-column-gap: 10px;
+    grid-column-gap: 25px;
+    grid-template-areas: 
+    "current-temp title title"
+    "current-temp detail num"
+    "highest-temp detail num" ;
 }
 
-canvas{
-    width: 90%;
-    margin: auto;
-}
+
