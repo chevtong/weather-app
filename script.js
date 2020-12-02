@@ -2,8 +2,10 @@
  //TODO: compare cities
  //TODO: see searching record
  //TODO: input value error
- //TODO: CSS for chart
- //TODO: show image accordingly
+
+ //TODO: change temp arrows 
+
+ let city = "london";
  
  document.querySelector("#submit").addEventListener("click", async function(e){
 
@@ -15,15 +17,48 @@
 
             const response = await fetch('https://api.weatherbit.io/v2.0/forecast/daily?city=' + city +'&key='+ key);
             const data = await response.json();
+
+            
             console.log(data);
 
-            //get current weather discription
-            var sun = data.data[0].weather.description;
-           
-            //get temperatures
-            var temperature = data.data[0].temp;
-            var highestTemp = data.data[0].max_temp; 
-            var lowestTemp = data.data[0].min_temp; 
+
+            //display function
+            function display(){
+
+                //get temperatures
+                var temperature = data.data[0].temp;
+                var highestTemp = data.data[0].max_temp; 
+                var lowestTemp = data.data[0].min_temp; 
+                //get current weather discription
+                var sun = data.data[0].weather.description;
+
+                //innerHTML wording display
+                document.querySelector(".city").innerHTML = data.city_name;
+                document.querySelector(".sun").innerHTML = sun;
+                document.querySelector(".current-temp").innerHTML = temperature + "°C ";
+                document.querySelector(".temp-highest").innerHTML = `<i class="fas fa-caret-up"></i> ${highestTemp}°C`;
+                document.querySelector(".temp-lowest").innerHTML += `<i class="fas fa-caret-up"></i> ${lowestTemp}°C`;
+
+                //show related img according to weather discription 
+                if(temperature < "3"){
+                    console.log(temperature);
+                    document.querySelector("img").src = "img/cold.png";
+                } else if(sun.includes("clouds")){
+                    document.querySelector("img").src = "img/clouds.png";
+                } else if(sun.includes("thunderstorm")){
+                    document.querySelector("img").src = "img/thunderstorm.png";
+                }  else if(sun.includes("rain")){
+                    document.querySelector("img").src = "img/rain.png";
+                }  else if(sun.includes("sun")){
+                    document.querySelector("img").src = "img/sun.png";
+                }  else {
+                    document.querySelector("img").src = "img/beach-sunset.png";
+                }
+            }
+
+            display();
+
+     
 
             //forcast
             var forcast1 = data.data[1].temp;
@@ -33,19 +68,6 @@
             var forcast5 = data.data[5].temp;
 
             console.log("5 days forcast: "+ forcast1 + "°C " + forcast2 + "°C " + forcast3 + "°C " +  forcast4 + "°C " +  forcast5 + "°C" );
-
-            //display function
-            function display(){
-                document.querySelector(".city").innerHTML = data.city_name;
-                document.querySelector(".sun").innerHTML = sun;
-                document.querySelector(".current-temp").innerHTML = temperature + "°C ";
-                document.querySelector(".temp-highest").innerHTML += " "+ highestTemp + "°C ";
-                document.querySelector(".temp-lowest").innerHTML += " " + lowestTemp + "°C ";
-            }
-
-            display();
-
-            if(sun.value)
 
 
             //date for chart
