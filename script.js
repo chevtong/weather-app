@@ -1,4 +1,4 @@
- //TODO: add display button + default city of city 2
+ //TODO:  default city of city 2
  //TODO: see searching record
  
 
@@ -18,6 +18,24 @@ document.querySelector("#submit").addEventListener("click", function(e){
     getWeather(city);
 
 });
+
+//plus city btn 
+document.querySelector("button.plus").addEventListener("click", function(){
+    console.log("plus btn");
+    document.querySelector(".container2").style.display = "block";
+    document.querySelector("button.plus").style.display = "none";
+    document.querySelector("button.delete").style.display = "block";
+
+})
+
+//delete city btn
+document.querySelector("button.delete").addEventListener("click", function(){
+    console.log("delete btn");
+    document.querySelector(".container2").style.display = "none";
+    document.querySelector("button.plus").style.display = "block";
+    document.querySelector("button.delete").style.display = "none";
+
+})
 
 //second city
 document.querySelector("#submit2").addEventListener("click", function(e){
