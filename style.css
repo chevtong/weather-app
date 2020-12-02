@@ -1,15 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Varela+Round&display=swap');
-.mockup{
-    background-image: url('sample.png');
-    width: 800px;
-    height: 500px;
-    float: right;
-    display:none;
-}
 
 body{
     text-align: center;
-    /* font-family: 'Ubuntu', sans-serif; */
     font-family: 'Varela Round', sans-serif;
     text-transform: uppercase;
     color: #707070;
@@ -26,21 +18,22 @@ p{
     font-size: 12px;
 }
 
-p.current-temp{
+p.current-temp, p.current-temp2{
+    text-transform: none;
     font-size: 50px;
     justify-self: end;
     grid-area: current-temp;
     
 }
 
-p.temp-highest{
-
+p.temp-highest, p.temp-highest2{
+    text-transform: none;
     justify-self: end;
     padding-right: 30px;
     grid-area: highest-temp;
 }
 
-p.detail-title{
+p.detail-title, p.detail-title2{
     font-size: 20px;
     padding-bottom: 10px;
     font-weight: bold;
@@ -48,14 +41,14 @@ p.detail-title{
     text-align: left;
 }
 
-p.detail{
+p.detail, p.detail2{
     font-size: 10px;
 
     text-align: left;
     grid-area: detail;
 
 }
-P.detail-num{
+p.detail-num, p.detail-num2{
    grid-area: num;
    font-size: 10px;
    text-align: left;
@@ -70,8 +63,9 @@ canvas{
     margin: auto;
 }
 
-input{
+input, #input2{
     border: none;
+    outline: none;
     background-color:  #e8e8e8;
     font-family: 'Varela Round', sans-serif;
     width: 70%;
@@ -80,7 +74,7 @@ input{
     opacity: 0.5;
     
 }
-input:hover{
+input:hover, #input2:hover{
     opacity: 1;
 }
 
@@ -88,26 +82,28 @@ button{
     background-color: transparent;
     border: none;
     color: #707070;
+    font-size: 18px;
 }
 
 button:hover{
-    color: #ff8856;
+    color: #e8e8e8;
 }
 
 
-.container{
+.container, .container2{
     width: 500px;
     height: 700px;
     padding: 30px 50px;
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
+    display: grid; 
 
 }
 
-.container>div{
-    margin: 30px;
+.container>div, .container2>div{
+    margin: 10px;
 }
 
-.temperature{
+.temperature, .temperature2{
     display: grid; 
     grid-template-columns: 50% 15% 2%;
     grid-template-rows: 40% 40% 20%;
@@ -117,6 +113,36 @@ button:hover{
     "current-temp title title"
     "current-temp detail num"
     "highest-temp detail num" ;
+}
+
+button.plus, button.plus2{
+    height: 200px; 
+    width: 20px;
+    outline: none;
+    background-color: #fcc28c;
+    opacity: 0.4;
+    color: white;
+}
+button.delete, button.delete2{
+    height: 200px; 
+    width: 20px;
+   
+    background-color: #515070;
+    opacity: 0.4;
+    color: white;
+    outline: none;
+
+}
+button.plus:hover, button.delete:hover, button.plus2:hover, button.delete2:hover{
+    opacity: 1;
+}
+.add-city{
+   
+    margin: auto 0;
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: 600px 600px 20px;
 }
 
 

@@ -9,11 +9,13 @@
     <!-- chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
     <link rel="stylesheet" href="style.css"> 
-    <title>Document</title>
+    <title>Weather App</title>
 </head>
 <body>
-    <div class="mockup"></div>
+   
+<div class="wrapper">
 
+    <!-- first city -->
     <div class="container">
 
         <div class="city-input">
@@ -22,11 +24,12 @@
                 <input type="text" placeholder="CITY NAME" required></input>
 
                 <button id="submit"><i class="fas fa-search"></i></button>
-                <h3 class="city"></h3>
+                
             </form>
         </div>
 
         <div class="sun-image">
+            <h3 class="city"></h3>
             <h4 class="sun"><h4></h4>
 
             <img src="" alt="weather_icon">
@@ -49,6 +52,53 @@
         </div>
 
     </div>
+
+    <!-- second city -->
+    <div class="container2">
+
+        <div class="city-input">
+            <form action="">
+                
+                <input type="text" placeholder="CITY NAME" id="input2" required></input>
+
+                <button id="submit2"><i class="fas fa-search"></i></button>
+                
+            </form>
+        </div>
+
+        <div class="sun-image">
+            <h3 class="city2"></h3>
+            <h4 class="sun2"><h4></h4>
+
+            <img src="" id="image-city2" alt="weather_icon">
+        </div>
+
+        <div class="temperature2">
+            <p class="current-temp2"></p>
+            
+            <p class="temp-highest2"> </p>
+            <p class="detail-title2">Details </p>
+            <p class="detail2">
+                UV <br>   humidity <br>precipitation <br> wind speed</p>
+            <p class="detail-num2"></p>
+
+        </div>
+        
+
+        <div class="chart2">
+            <canvas id="myLineChart2"></canvas>
+        </div>
+
+    </div>
+
+    <!-- button to add or delete city -->
+    <div class="add-city">
+        <button class ="plus">+</button>    
+
+        <button class ="delete">-</button>  
+    </div>
+
+</div>
 
 
     <script src="script.js"></script>
