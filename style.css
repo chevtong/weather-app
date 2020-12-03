@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Varela+Round&display=swap');
 
 
-/* //TODO: responsive for mobile */
 
 body{
     text-align: center;
@@ -58,7 +57,8 @@ p.detail-num, p.detail-num2{
 }
 
 img{
-    width: 180px;
+    width: 200px;
+    padding: 10px 10px;
 }
 
 canvas{
@@ -66,7 +66,7 @@ canvas{
     margin: auto;
 }
 
-input, #input2{
+input, input#input2{
     border: none;
     outline: none;
     background-color:  #e8e8e8 !important;
@@ -118,23 +118,24 @@ button.plus:hover, button.delete:hover{
     opacity: 1;
 }
 
+.add-city{
+    margin: auto 0;
+}
+
 /* GRID CONTAINTER */
 .wrapper{
     display: grid;
     grid-template-columns: 600px 600px 20px;
+    margin: auto;
 }
 .container, .container2{
     width: 500px;
-    height: 700px;
     padding: 30px 50px;
     /* border: 1px solid grey; */
     display: grid; 
-
 }
 .container2{
-    display: grid;
     display:none;
-    
 }
 
 .container>div, .container2>div{
@@ -153,10 +154,7 @@ button.plus:hover, button.delete:hover{
     "highest-temp detail num" ;
 }
 
-.add-city{
-   
-    margin: auto 0;
-}
+
 
 
 @media only screen and (max-width: 600px){

@@ -1,46 +1,42 @@
 
- //TODO: see searching record
+ //TODO:  Remember the user choice on subsequent visits
  
 
  //EVENT HANDLERS
 window.onload = function() {
+
     getWeather("brussels");
-  }
+  };
 
 //first city btn
 document.querySelector("#submit").addEventListener("click", function(e){
 
     e.preventDefault();
-    console.log("clicked");
 
     city = document.querySelector("input").value;
-    console.log(city);
     getWeather(city);
 
 });
 
 //plus city btn 
 document.querySelector("button.plus").addEventListener("click", function(){
-    console.log("plus btn");
+
     document.querySelector(".container2").style.display = "block";
     document.querySelector(".container2").style.display = "grid";
     document.querySelector("button.plus").style.display = "none";
     document.querySelector("button.delete").style.display = "block";
 
-    city2 = "bangkok";
-    console.log(city2);
-    getWeather2(city2);
+    getWeather2("bangkok");
 
-})
+});
 
 //delete city btn
 document.querySelector("button.delete").addEventListener("click", function(){
-    console.log("delete btn");
+
     document.querySelector(".container2").style.display = "none";
     document.querySelector("button.plus").style.display = "block";
     document.querySelector("button.delete").style.display = "none";
-
-})
+});
 
 //second city btn
 document.querySelector("#submit2").addEventListener("click", function(e){
@@ -48,15 +44,8 @@ document.querySelector("#submit2").addEventListener("click", function(e){
     e.preventDefault();
 
     city2 = document.querySelector("#input2").value;
-    console.log(city2);
     getWeather2(city2);
-
-    
-
 });
-
-
-
 
 
 //FUNCTIONS FOR CITY 1
@@ -64,20 +53,21 @@ document.querySelector("#submit2").addEventListener("click", function(e){
 function getWeather(city){
 
     const key = "da9a51208d5e4403a9053883caf4d08d";
-            
+
     fetch('https://api.weatherbit.io/v2.0/forecast/daily?city=' + city +'&key='+ key)
     .then((resp) => {
         return resp.json()
-    }) // Convert data to json
+    })
     .then((data) => {
             console.log(data);
             display(data);
             makeChart(data);
         })
-}
+};
 
-let chartColor;
+
 //display function
+let chartColor;
 function display(data){
 
     //get temperatures
@@ -102,7 +92,7 @@ function display(data){
                                                       ${humidity}% <br> ${windSpeed}km/h`;
 
     //show related img according to weather discription 
-    if(temperature < "3"){
+    if(temperature < "1"){
         document.querySelector("img").src = "img/cold.png";
         chartColor = "#4793ff";
     } else if(description.includes("clouds")){
@@ -120,10 +110,8 @@ function display(data){
     }  else {
         document.querySelector("img").src = "img/beach-sunset.png";
         chartColor = "#fcc28c";
-    }
-
-    
-}
+    }   
+};
 
 //chart function
 function makeChart(data){
@@ -133,7 +121,6 @@ function makeChart(data){
     var forcast3 = data.data[3].temp;
     var forcast4 = data.data[4].temp;
     var forcast5 = data.data[5].temp;
-    console.log("5 days forcast: "+ forcast1 + "°C " + forcast2 + "°C " + forcast3 + "°C " +  forcast4 + "°C " +  forcast5 + "°C" );
 
     //date for chart
     var date1 = data.data[1].valid_date;
@@ -141,7 +128,6 @@ function makeChart(data){
     var date3 = data.data[3].valid_date;
     var date4 = data.data[4].valid_date;
     var date5 = data.data[5].valid_date;
-    console.log("The next 5 days: " + date1 + " "+ date2 + " "+ date3 + " "+ date4 + " "+ date5);
 
     var ctx = document.getElementById('myLineChart').getContext('2d');
     var chart = new Chart(ctx, {
@@ -158,7 +144,6 @@ function makeChart(data){
                 data: [forcast1, forcast2, forcast3, forcast4, forcast5]
             }]
         },
-
 
         // Configuration options go here
         options: {
@@ -204,8 +189,9 @@ function getWeather2(city2){
         })
 }
 
-let chartColor2;
+
 //display function
+let chartColor2;
 function display2(data2){
 
     //get temperatures
@@ -231,7 +217,7 @@ function display2(data2){
                                                       ${humidity2}% <br> ${windSpeed2}km/h`;
 
     //show related img according to weather discription 
-    if(temperature2 < "3"){
+    if(temperature2 < "1"){
         document.querySelector("#image-city2").src = "img/cold.png";
         chartColor2 = "#4793ff";
     } else if(description2.includes("clouds")){
@@ -288,7 +274,7 @@ function makeChart2(data2){
 
         // Configuration options go here
         options: {
-            responsive:false,
+            responsive: false,
             scales: {
                 xAxes: [{
                     gridLines: {
