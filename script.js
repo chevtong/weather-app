@@ -1,4 +1,4 @@
- //TODO:  default city of city 2
+
  //TODO: see searching record
  
 
@@ -64,7 +64,7 @@ document.querySelector("#submit2").addEventListener("click", function(e){
 function getWeather(city){
 
     const key = "da9a51208d5e4403a9053883caf4d08d";
-        
+            
     fetch('https://api.weatherbit.io/v2.0/forecast/daily?city=' + city +'&key='+ key)
     .then((resp) => {
         return resp.json()

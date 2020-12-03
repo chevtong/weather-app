@@ -99,7 +99,7 @@ button.plus{
     height: 300px; 
     width: 20px;
     outline: none;
-    background-color: #fcc28c;
+    background-color:  #515070;
     opacity: 0.4;
     color: white;
 }
@@ -107,7 +107,7 @@ button.delete{
     height: 300px; 
     width: 20px;
    
-    background-color: #515070;
+    background-color: #fcc28c;
     opacity: 0.4;
     color: white;
     outline: none;
@@ -159,3 +159,23 @@ button.plus:hover, button.delete:hover{
 }
 
 
+@media only screen and (max-width: 600px){
+    .wrapper{
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        grid-gap: 40px;
+    }
+    .container, .container2{
+        width: 80%;
+        padding: 10px;
+        margin: auto;
+    }
+
+    button.plus, button.delete{
+        width: 70%;
+        height: 20px;
+        margin: auto;
+    }
+}
