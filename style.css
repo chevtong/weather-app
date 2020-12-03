@@ -172,8 +172,12 @@ button.plus:hover, button.delete:hover{
     }
 
     button.plus, button.delete{
-        width: 70%;
+        width: 80%;
         height: 20px;
         margin: auto;
+        
+    }
+    button.delete{
+        margin-bottom: 40px;
     }
 }

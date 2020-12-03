@@ -1,8 +1,7 @@
-//TODO: put the image.src as varibales, then both cities use the same functions 
  //TODO:  Remember the user choice on subsequent visits
  
 
-//ALL VARIABLES:
+//ALL global VARIABLES:
 let cityTag; 
 let sunIcon;
 let currentTemp;
@@ -12,9 +11,7 @@ let sunImage;
 let ctx;
 let chartColor;
 
-
-
- //EVENT HANDLERS:
+ //EVENT HANDLERS
  //default city
 window.onload = function() {
 
@@ -94,7 +91,7 @@ document.querySelector("#submit2").addEventListener("click", function(e){
 });
 
 
-//FUNCTIONS FOR CITY 1
+//FUNCTIONS
 //fetch API function
 function getWeather(city){
 
@@ -111,7 +108,6 @@ function getWeather(city){
         })
 };
 
-
 //display function
 function display(data){
 
@@ -126,8 +122,6 @@ function display(data){
     var uv = Math.round(data.data[0].uv);
     var humidity = data.data[0].rh;
     var windSpeed =  Math.round(data.data[0].wind_spd);
-  
-    
     
     //innerHTML wording display
     cityTag.innerHTML = data.city_name;
