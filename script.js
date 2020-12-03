@@ -4,10 +4,10 @@
 
  //EVENT HANDLERS
 window.onload = function() {
-    getWeather("london");
+    getWeather("brussels");
   }
 
-
+//first city btn
 document.querySelector("#submit").addEventListener("click", function(e){
 
     e.preventDefault();
@@ -23,8 +23,13 @@ document.querySelector("#submit").addEventListener("click", function(e){
 document.querySelector("button.plus").addEventListener("click", function(){
     console.log("plus btn");
     document.querySelector(".container2").style.display = "block";
+    document.querySelector(".container2").style.display = "grid";
     document.querySelector("button.plus").style.display = "none";
     document.querySelector("button.delete").style.display = "block";
+
+    city2 = "bangkok";
+    console.log(city2);
+    getWeather2(city2);
 
 })
 
@@ -37,7 +42,7 @@ document.querySelector("button.delete").addEventListener("click", function(){
 
 })
 
-//second city
+//second city btn
 document.querySelector("#submit2").addEventListener("click", function(e){
 
     e.preventDefault();
@@ -54,7 +59,7 @@ document.querySelector("#submit2").addEventListener("click", function(e){
 
 
 
-//FUNCTIONS
+//FUNCTIONS FOR CITY 1
 //fetch API function
 function getWeather(city){
 

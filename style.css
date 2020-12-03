@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Varela+Round&display=swap');
 
+
+/* //TODO: responsive for mobile */
+
 body{
     text-align: center;
     font-family: 'Varela Round', sans-serif;
@@ -66,56 +69,30 @@ canvas{
 input, #input2{
     border: none;
     outline: none;
-    background-color:  #e8e8e8;
+    background-color:  #e8e8e8 !important;
     font-family: 'Varela Round', sans-serif;
+    text-transform: uppercase;
     width: 70%;
     line-height: 2.5;
     text-align: center;
     opacity: 0.5;
     
 }
+
 input:hover, #input2:hover{
     opacity: 1;
+    
 }
 
-button{
+button, button#submit2{
     background-color: transparent;
     border: none;
     color: #707070;
     font-size: 18px;
 }
 
-button:hover{
+button:hover, button#submit2:hover{
     color: #e8e8e8;
-}
-
-
-.container, .container2{
-    width: 500px;
-    height: 700px;
-    padding: 30px 50px;
-    /* border: 1px solid grey; */
-    display: grid; 
-
-}
-.container2{
-    display:none;
-}
-
-.container>div, .container2>div{
-    margin: 10px;
-}
-
-.temperature, .temperature2{
-    display: grid; 
-    grid-template-columns: 50% 15% 2%;
-    grid-template-rows: 40% 40% 20%;
-    margin: auto;
-    grid-column-gap: 25px;
-    grid-template-areas: 
-    "current-temp title title"
-    "current-temp detail num"
-    "highest-temp detail num" ;
 }
 
 button.plus{
@@ -140,13 +117,45 @@ button.delete{
 button.plus:hover, button.delete:hover{
     opacity: 1;
 }
-.add-city{
-   
-    margin: auto 0;
-}
+
+/* GRID CONTAINTER */
 .wrapper{
     display: grid;
     grid-template-columns: 600px 600px 20px;
+}
+.container, .container2{
+    width: 500px;
+    height: 700px;
+    padding: 30px 50px;
+    /* border: 1px solid grey; */
+    display: grid; 
+
+}
+.container2{
+    display: grid;
+    display:none;
+    
+}
+
+.container>div, .container2>div{
+    margin: 10px;
+}
+
+.temperature, .temperature2{
+    display: grid; 
+    grid-template-columns: 50% 15% 2%;
+    grid-template-rows: 40% 40% 20%;
+    margin: auto;
+    grid-column-gap: 25px;
+    grid-template-areas: 
+    "current-temp title title"
+    "current-temp detail num"
+    "highest-temp detail num" ;
+}
+
+.add-city{
+   
+    margin: auto 0;
 }
 
 
