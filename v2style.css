@@ -13,9 +13,11 @@ h3, h4{
     margin: 0; 
     padding-top: 5px;
 }
+
 p{
-    font-size: 10px;
+    font-size: 8px;
 }
+
 input{
     border: none;
     outline: none;
@@ -67,8 +69,14 @@ button:hover{
 
 .forecast{
     display: grid;
-    grid-template-columns: repeat(5, 50px);
+    grid-template-columns: repeat(5, 1fr);
     align-self: center;
+    justify-content: space-between;
+    
+}
+
+.day1,.day2, .day3, .day4, .day5{
+    padding: 5px;
 }
 
 
@@ -79,10 +87,13 @@ button:hover{
 
 .citybackground{
     background-image: url('v2img/sample.jpg');
+    background: rgba(0, 151, 19, 0.1);
+
     border-radius: 8px 8px 0 0;
     background-size: cover;
     display:grid;
 }
+
 .citybackground > div {
     padding: 10px;
 
