@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body{
+    background-color: #fbf6f0;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+
+}
+
+h3, h4{
+    color: white; 
+    font-weight: 300;
+    margin: 0; 
+    padding-top: 5px;
+}
+p{
+    font-size: 10px;
+}
+input{
+    border: none;
+    outline: none;
+    background-color:  #e8e8e8;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;   
+    line-height: 2.5;
+    text-align: center;
+    opacity: 0.5;
+    border-radius: 3px;
+    width: 70%;
+}
+button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+}
+button:hover{
+    color: grey;
+}
+.current-temp{
+    align-self: end;
+}
+.current-temp p{
+    font-size: 16px;
+    text-align: left;
+    margin: 3px;
+    color: white; 
+}
+.temp-range p{
+    font-size: 12px;
+    text-align: left;
+    margin: 3px;
+    color: white; 
+}
+
+
+.container{
+    width: 400px;
+    height:600px;
+    margin: 100px;
+    border-radius: 8px;
+    background-color: white;
+    display: grid; 
+    grid-template-columns: auto;
+    grid-template-rows: 80% 20%;
+}
+
+.forecast{
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    align-self: center;
+}
+
+
+
+#current-icon-day1, #current-icon-day2, #current-icon-day3, #current-icon-day4, #current-icon-day5{
+    width: 30px;
+}
+
+.citybackground{
+    background-image: url('v2img/sample.jpg');
+    border-radius: 8px 8px 0 0;
+    background-size: cover;
+    display:grid;
+}
+.citybackground > div {
+    padding: 10px;
+
+}
+
+.display-current{
+    align-self: end;
+    display: grid; 
+    grid-template-columns: 40% 60%;
+}
+
+.current-icon{
+    grid-row: 1/3;
+}

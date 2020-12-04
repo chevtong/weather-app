@@ -111,17 +111,6 @@ function getWeather(city){
 //display function
 function display(data){
 
-    //get temperatures
-    var temperature = data.data[0].temp;
-    var highestTemp = Math.round(data.data[0].max_temp); 
-    var lowestTemp = Math.round(data.data[0].min_temp); 
-    //get current weather discription
-    var description = data.data[0].weather.description;
-    //get weather details
-    var precipation = Math.round(data.data[0].precip);
-    var uv = Math.round(data.data[0].uv);
-    var humidity = data.data[0].rh;
-    var windSpeed =  Math.round(data.data[0].wind_spd);
     
     //innerHTML wording display
     cityTag.innerHTML = data.city_name;
