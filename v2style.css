@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 body{
-    background-color: #fbf6f0;
+    background-color: #faf4f4;
     text-align: center;
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
@@ -15,7 +15,7 @@ h3, h4{
 }
 
 p{
-    font-size: 8px;
+    font-size: 9px;
 }
 
 input{
@@ -39,24 +39,31 @@ button{
 button:hover{
     color: grey;
 }
-.current-temp{
+.current-temp, .current-temp2{
+    align-self: end;
+    justify-self: center;
+}
+.temp-range, .temp-range2{
     align-self: end;
 }
-.current-temp p{
-    font-size: 16px;
+.current-temp p, .current-temp2 p{
+    font-size: 50px;
     text-align: left;
     margin: 3px;
-    color: white; 
+    /* font-weight: bold; */
+    
 }
-.temp-range p{
-    font-size: 12px;
+.temp-range p, .temp-range2 p{
+    font-size: 15px;
     text-align: left;
     margin: 3px;
-    color: white; 
+    
 }
 
 
-.container{
+
+
+.container, .container2{
     width: 400px;
     height:600px;
     margin: 100px;
@@ -64,10 +71,18 @@ button:hover{
     background-color: white;
     display: grid; 
     grid-template-columns: auto;
-    grid-template-rows: 80% 20%;
+    grid-template-rows: 85% 15%;
 }
 
-.forecast{
+.container2{
+    display: none;
+}
+
+.search-area, .search-area2{
+    margin-top: 10px;
+}
+
+.forecast, .forecast2{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     align-self: center;
@@ -75,36 +90,41 @@ button:hover{
     
 }
 
-.day1,.day2, .day3, .day4, .day5{
+.day1,.day2, .day3, .day4, .day5, .day1-2,.day2-2, .day3-2, .day4-2, .day5-2{
     padding: 5px;
 }
 
 
 
-#current-icon-day1, #current-icon-day2, #current-icon-day3, #current-icon-day4, #current-icon-day5{
+#current-icon-day1, #current-icon-day2, #current-icon-day3, #current-icon-day4, #current-icon-day5,#current-icon-day1-2, #current-icon-day2-2, #current-icon-day3-2, #current-icon-day4-2, #current-icon-day5-2{
     width: 30px;
 }
 
-.citybackground{
+.citybackground,.citybackground2{
     background-image: url('v2img/sample.jpg');
     background: rgba(0, 151, 19, 0.1);
 
     border-radius: 8px 8px 0 0;
     background-size: cover;
     display:grid;
+  
 }
 
-.citybackground > div {
-    padding: 10px;
 
-}
 
-.display-current{
+.display-current, .display-current2{
     align-self: end;
     display: grid; 
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 30% 30% 30%;
+    background: white;
+    opacity: 0.6;
+    padding: 0;
+}    
+
+.current-icon, .current-icon2{
+    align-self: end;
 }
 
-.current-icon{
-    grid-row: 1/3;
+.wrapper{
+    display: flex;
 }
