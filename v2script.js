@@ -166,7 +166,7 @@ document.querySelector("#plus").addEventListener("click", function(e){
 
     //call function with default city
     getWeather("hong kong");
-    backgroundImage("HONG KONG");
+    backgroundImage("hongkong");
 
 });
 
