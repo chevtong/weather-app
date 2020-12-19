@@ -179,7 +179,7 @@ function makeChart(data){
         data: {
             labels: [ date1 , date2, date3, date4, date5],
             datasets: [{
-                label: 'TEMPERATURE FOR 5 DAYS',
+                
                 backgroundColor: 'transparent',
                 borderColor: chartColor,
                 data: [forcast1, forcast2, forcast3, forcast4, forcast5]
@@ -188,6 +188,14 @@ function makeChart(data){
 
         // Configuration options go here
         options: {
+            legend: {
+                display:false
+            },
+            title:{
+                display: true,
+                text: "TEMPERATURE FOR 5 DAYS"
+
+            },
             responsive:false,
             scales: {
                 xAxes: [{

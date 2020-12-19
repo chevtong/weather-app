@@ -52,6 +52,8 @@ var foreDate5;
     getWeather("brussels");
     backgroundImage("brussels");
 
+    
+
 };
 
 //first city search btn

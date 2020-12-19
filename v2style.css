@@ -81,7 +81,7 @@ button:hover{
 .temp-range p, .temp-range2 p{
     font-size: 15px;
     text-align: left;
-    margin: 3px;
+    margin: 5px 5px 15px 5px;
     
 }
 
@@ -132,16 +132,26 @@ button:hover{
         grid-gap: 30px;
         justify-items: stretch;
     }
+    .container, .container2{
+        margin: auto;
+    }
 }
 
 
 @media screen and (max-width: 425px){ 
     .wrapper{
+        width: 95%;
         grid-template-columns: auto;
         grid-gap: 15px;
         margin: auto;
     }
     .container, .container2{
         width: auto;
+    }
+    .temp-range p, .temp-range2 p{
+        font-size: 11px;
+    }
+    .forecast p, .forecast2 p{
+        font-size: 8px;
     }
 }
