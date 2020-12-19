@@ -139,6 +139,9 @@ button:hover{
 
 
 @media screen and (max-width: 425px){ 
+    input{
+        width: 60%;
+    }
     .wrapper{
         width: 95%;
         grid-template-columns: auto;
